@@ -5,38 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="game.css">
-    <title>Game</title>
+
+    <title>Hangman</title>
 </head>
 <body>
-    <div class="game_start container">
-        <h1 class="text-center my-4">Game Title</h1>
-        <div class="intro" >
-            <h2>Game Description</h2>
-            <p>This is a brief description of the game. It explains the objective, rules, and how to play.</p>
-        </div>
+    <div class="game_start">
+        <h1 class="text-center my-4">Hangman</h1>
         <div class="instructions">
             <h2>Instructions</h2>
             <p>Follow these instructions to play the game effectively. Make sure to read them carefully!</p>
             <ul>
-                <li>Step 1: Do this first.</li>
-                <li>Step 2: Then do that.</li>
-                <li>Step 3: Finally, complete the task.</li>    
+                <li>A word is hidden, and each letter is shown as "_".</li>
+                <li>Guess one letter at a time.</li>
+                <li>If correct → the letter is revealed.</li>
+                <li>If wrong → a part of the Hangman is drawn.</li>
+                <li>7 mistakes → Game Over.</li>
+                <li>Guess the whole word before 7 mistakes → You Win!</li>
             </ul>
         </div> 
+        <div class="text-center">
+            <button class="btn btn-success start_game_btn">Start Game</button>
+        </div>
     </div>
     <div class="game_container container">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Enter a character" aria-label="Enter a character" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+        <div class="input-group ">
+            <input type="text" class="form-control mt-3 inputchar" placeholder="Enter a character" aria-label="Enter a character" aria-describedby="button-addon2">
+            <button class="btn btn-success mt-3" type="button" id="button-addon2">Check it</button>
         </div>
         <div class="word_char">
 
         </div>
-        <div class="draw_area">
-            <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div class="draw_area d-flex justify-content-center align-items-center">
+            <canvas id="gameCanvas" width="800" height="600">
+                
+            </canvas>
         </div>
     </div>
-    <img src="../images/starscopy.png" alt="">
+    <script src="game.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
